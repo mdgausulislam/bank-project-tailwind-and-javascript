@@ -20,16 +20,21 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
 
     const newWithdrawField = parseFloat(newWithdrawFieldString);
 
+    // step-7
+
+    withdrawField.value = ' ';
+    if(isNaN(newWithdrawField)){
+        alert('please valid a amount');
+        return;
+    }
+
     // step3
     const totalWithdrawElements = document.getElementById('total-withdraw');
     const previousWithdrawTotalString = totalWithdrawElements.innerText;
     const previousWithdrawTotal = parseFloat(previousWithdrawTotalString);
     // console.log(previousWithdrawTotal);
 
-    // step-04
-
-    const currentTotalWithdraw = newWithdrawField + previousWithdrawTotal;
-    totalWithdrawElements.innerText = currentTotalWithdraw;
+   
 
 
     // step-05
@@ -37,6 +42,17 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const balanceTotalElements = document.getElementById('balance-total');
     const previousBalanceTotalString = balanceTotalElements.innerText;
     const previousBalanceTotal = parseFloat(previousBalanceTotalString);
+     
+    
+    if(newWithdrawField>previousWithdrawTotal){
+        alert('invalid amount');
+        return;
+    }
+
+     // step-04
+
+     const currentTotalWithdraw = newWithdrawField + previousWithdrawTotal;
+     totalWithdrawElements.innerText = currentTotalWithdraw;
 
     // step-6
 
@@ -45,7 +61,5 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     balanceTotalElements.innerText = currentBalanceTotal;
 
 
-    // step-7
-
-    withdrawField.value = ' ';
+  
 })

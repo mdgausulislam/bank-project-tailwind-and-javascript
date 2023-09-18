@@ -7,6 +7,15 @@ document.getElementById('btn-deposit').addEventListener('click',function(){
     const depositField=document.getElementById('deposit-field');
     const newDepositAmountString=depositField.value;
     const newDepositAmount=parseFloat(newDepositAmountString);
+
+    
+    // step-7 clear the deposit field
+
+    depositField.value=' ';
+
+    if(isNaN(newDepositAmount)){
+        alert('please valid a amount');
+        return;}
     // console.log(deposit);
 
     // step-03 get the current deposit total amount
@@ -38,7 +47,4 @@ balanceTotalElements.innerText=currentBalanceTotal;
 
 
 
-    // step-7 clear the deposit field
-
-    depositField.value=' ';
 })
