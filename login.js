@@ -26,9 +26,10 @@ console.log(password);
 //step-04 verify email and password and check wether valid user or invalid user
 
 if(email=='gausulislam5@gmail.com' && password=='secret'){
-    console.log('valid-user');
+    
+    window.location.href='bank.html';
 }else{
-    console.log('not valid user');
+    alert('not valid user');
 }
 
 })
